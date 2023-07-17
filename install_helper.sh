@@ -22,6 +22,8 @@ mv ~/dotfiles/.vimrc ~/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo "Initial setup - please wait"
+mv ~/.gitconfig ~/.gitconfig.bck
 /usr/bin/git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 /usr/bin/vim +PlugInstall +qall
+mv ~/.gitconfig.bck ~/.gitconfig
 
