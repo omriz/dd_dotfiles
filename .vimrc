@@ -71,5 +71,6 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_variable_declarations = 1
+let g:coc_disable_startup_warning = 1
 
 nnoremap <Leader>b :ls<CR>:b<Space>
