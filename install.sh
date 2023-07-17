@@ -5,7 +5,6 @@ git config --global user.name "Omri Zohar"
 git config --global user.email "omri.zohar@datadoghq.com"
 
 # Updating bashrc
-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 cat >> ~/.bashrc <<EOL
 ddtool auth token registry --datacenter us1.ddbuild.io >> /dev/null
 if [ -f "\$HOME/.bash-git-prompt/gitprompt.sh" ]; then
@@ -19,9 +18,13 @@ EOL
 
 # Installing some things
 sudo apt-get update && sudo apt-get -q upgrade
-sudo apt-get -q vim tmux curl
+sudo apt-get -q vim tmux curl git
+
+# Moving things
+git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 # Configuring VIM
+mv ~/dotfiles/.vimrc ~/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall
