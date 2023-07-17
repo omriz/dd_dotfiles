@@ -18,13 +18,13 @@ EOL
 
 # Installing some things
 sudo apt-get update && sudo apt-get -q upgrade
-sudo apt-get -q vim tmux curl git
+sudo apt-get -q vim tmux curl git psmisc
 
 # Moving things
-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+/usr/bin/git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 # Configuring VIM
 mv ~/dotfiles/.vimrc ~/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +PlugInstall +qall
+/usr/bin/vim +PlugInstall +qall
