@@ -3,6 +3,7 @@
 # Setting up git credentials
 git config --global user.name "Omri Zohar"
 git config --global user.email "omri.zohar@datadoghq.com"
+git config --global url."git@github.com:".insteadOf "https://github.com/"
 
 # Updating bashrc
 cat >> ~/.bashrc <<EOL
@@ -19,6 +20,7 @@ EOL
 sudo apt-get update && sudo apt-get -q -y upgrade
 sudo apt-get -q -y install vim tmux curl git psmisc htop
 mv ~/dotfiles/.vimrc ~/.vimrc
+mv ~/dotfiles/.bldg.yml ~/.bldg.yml
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo "Initial setup - please wait"
@@ -26,4 +28,4 @@ mv ~/.gitconfig ~/.gitconfig.bck
 /usr/bin/git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 /usr/bin/vim +PlugInstall +qall
 mv ~/.gitconfig.bck ~/.gitconfig
-
+sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g' ~/.bashrc
