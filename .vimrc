@@ -74,3 +74,5 @@ let g:go_highlight_variable_declarations = 1
 let g:coc_disable_startup_warning = 1
 
 nnoremap <Leader>b :ls<CR>:b<Space>
+set ttymouse=xterm2
+set mouse=a
