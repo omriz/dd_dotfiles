@@ -4,6 +4,7 @@
 git config --global user.name "Omri Zohar"
 git config --global user.email "omri.zohar@datadoghq.com"
 git config --global url."git@github.com:".insteadOf "https://github.com/"
+git config --global push.autoSetupRemote true
 
 # Updating bashrc
 cat >> ~/.bashrc <<EOL
