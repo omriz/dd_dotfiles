@@ -28,5 +28,6 @@ echo "Initial setup - please wait"
 mv ~/.gitconfig ~/.gitconfig.bck
 /usr/bin/git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 /usr/bin/vim +PlugInstall +qall
+go install github.com/bazelbuild/buildtools/buildifier@latest
 mv ~/.gitconfig.bck ~/.gitconfig
 sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g' ~/.bashrc
