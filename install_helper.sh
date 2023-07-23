@@ -19,7 +19,7 @@ fi
 EOL
 
 sudo apt-get update && sudo apt-get -q -y upgrade
-sudo apt-get -q -y install vim tmux curl git psmisc htop
+sudo apt-get -q -y install vim tmux curl git psmisc htop python3-pynvim
 mv ~/dotfiles/.vimrc ~/.vimrc
 mv ~/dotfiles/.bldg.yml ~/.bldg.yml
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

@@ -16,6 +16,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'Kogia-sima/bufftab.vim'
 call plug#end()
 
+let g:python3_host_prog="/usr/local/python3/bin/python3"
 
 " set the runtime path to include Vundle and initialize
 filetype plugin indent on    " required
