@@ -77,3 +77,5 @@ let g:coc_disable_startup_warning = 1
 nnoremap <Leader>b :ls<CR>:b<Space>
 set ttymouse=xterm2
 set mouse=a
+
+au filetype go inoremap <buffer> . .<C-x><C-o>
