@@ -33,16 +33,14 @@ alias vim=nvim
 EOL
 
 
+echo "Initial setup - please wait"
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt-get update && sudo apt-get -q -y upgrade
 sudo apt-get -q -y install neovim tmux curl git psmisc htop python3-pynvim
 wget https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
 sudo dpkg -i git-delta_0.18.2_amd64.deb
-mv ~/dotfiles/.vimrc ~/.vimrc
-mv ~/dotfiles/.bldg.yml ~/.bldg.yml
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo "Initial setup - please wait"
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mv ~/.gitconfig ~/.gitconfig.bck
 /usr/bin/git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 go install github.com/bazelbuild/buildtools/buildifier@latest
