@@ -26,10 +26,6 @@ EOL
 
 cat >> ~/.zshrc <<EOL
 ddtool auth token registry --datacenter us1.ddbuild.io >> /dev/null
-if [ -f "\$HOME/.bash-git-prompt/gitprompt.sh" ]; then
-    GIT_PROMPT_ONLY_IN_REPO=1
-    source \$HOME/.bash-git-prompt/gitprompt.sh
-fi
 if [[ \$- =~ i ]] && [[ -z "\$TMUX" ]] && [[ -n "\$SSH_TTY" ]]; then
   tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
 fi
