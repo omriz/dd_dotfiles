@@ -29,6 +29,7 @@ ddtool auth token registry --datacenter us1.ddbuild.io >> /dev/null
 if [[ \$- =~ i ]] && [[ -z "\$TMUX" ]] && [[ -n "\$SSH_TTY" ]]; then
   tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
 fi
+alias vim=nvim
 EOL
 
 
@@ -47,4 +48,7 @@ mv ~/.gitconfig ~/.gitconfig.bck
 go install github.com/bazelbuild/buildtools/buildifier@latest
 go install github.com/rakyll/gotest@latest
 mv ~/.gitconfig.bck ~/.gitconfig
+mkdir -p ~/.config/nvim
+cp ~/.vimrc ~/.config/nvim/init.vim
+cp -r ~/.vim/* ~/.config/nvim
 sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g' ~/.bashrc
