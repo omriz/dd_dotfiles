@@ -33,8 +33,9 @@ alias vim=nvim
 EOL
 
 
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt-get update && sudo apt-get -q -y upgrade
-sudo apt-get -q -y install vim tmux curl git psmisc htop python3-pynvim
+sudo apt-get -q -y install nvim tmux curl git psmisc htop python3-pynvim
 wget https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
 sudo dpkg -i git-delta_0.18.2_amd64.deb
 mv ~/dotfiles/.vimrc ~/.vimrc
@@ -44,11 +45,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 echo "Initial setup - please wait"
 mv ~/.gitconfig ~/.gitconfig.bck
 /usr/bin/git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
-/usr/bin/vim +PlugInstall +qall
 go install github.com/bazelbuild/buildtools/buildifier@latest
 go install github.com/rakyll/gotest@latest
 mv ~/.gitconfig.bck ~/.gitconfig
 mkdir -p ~/.config/nvim
-cp ~/.vimrc ~/.config/nvim/init.vim
-cp -r ~/.vim/* ~/.config/nvim
+cp ~/dotfiles/.vimrc ~/.config/nvim/init.vim
+/usr/bin/nvim +PlugInstall +qall
 sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g' ~/.bashrc
