@@ -5,6 +5,12 @@ git config --global user.name "Omri Zohar"
 git config --global user.email "omri.zohar@datadoghq.com"
 git config --global url."git@github.com:".insteadOf "https://github.com/"
 git config --global push.autoSetupRemote true
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global merge.conflictStyle zdiff3
+git config --global delta.side-by-side true
+
 
 # Updating bashrc
 cat >> ~/.bashrc <<EOL
@@ -20,6 +26,8 @@ EOL
 
 sudo apt-get update && sudo apt-get -q -y upgrade
 sudo apt-get -q -y install vim tmux curl git psmisc htop python3-pynvim
+wget https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
+sudo dpkg -i git-delta_0.18.2_amd64.deb
 mv ~/dotfiles/.vimrc ~/.vimrc
 mv ~/dotfiles/.bldg.yml ~/.bldg.yml
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
