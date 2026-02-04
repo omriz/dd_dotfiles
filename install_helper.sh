@@ -35,7 +35,7 @@ EOL
 
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt-get update && sudo apt-get -q -y upgrade
-sudo apt-get -q -y install nvim tmux curl git psmisc htop python3-pynvim
+sudo apt-get -q -y install neovim tmux curl git psmisc htop python3-pynvim
 wget https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
 sudo dpkg -i git-delta_0.18.2_amd64.deb
 mv ~/dotfiles/.vimrc ~/.vimrc
